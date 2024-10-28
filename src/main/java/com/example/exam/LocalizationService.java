@@ -13,7 +13,6 @@ public class LocalizationService {
 
     public Locale getLocaleFromHeader(String localeStr) {
         if (localeStr != null && !localeStr.isEmpty()) {
-            // Extract the first locale if multiple are provided
             String[] parts = localeStr.split(",")[0].split("-");
             if (parts.length == 2) {
                 return new Locale(parts[0], parts[1]);
@@ -28,4 +27,3 @@ public class LocalizationService {
         return messageSource.getMessage(code, null, locale);
     }
 }
-
